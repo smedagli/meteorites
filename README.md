@@ -1,5 +1,9 @@
 # meteorites
 Analysis of the Meteorite Landings db by NASA 
+###### Author: Stefano Medagli
+###### date: 02.06.2020
+###### ver: 0.1
+###### data from: https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh
 
 ## prerequisites
 create a conda environment using the file in `environment/pkg.txt`
@@ -63,3 +67,4 @@ contains modules to parse data
 * *paths.py*: contains the paths of the components the project
 * *dataframe.py*: a collection of quick functions for common operations of pandas' DataFrame
 * *common.py*: contains common variables (useful to standardize formats)
+* *version.py*: keeps the versioning number
