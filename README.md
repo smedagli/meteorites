@@ -3,7 +3,11 @@ Analysis of the Meteorite Landings db by NASA
 ###### Author: Stefano Medagli
 ###### date: 02.06.2020
 ###### ver: 0.1
-###### data from: https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh
+###### source data: https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh
+
+## Related links
+https://link.medium.com/2aFnf7FDZ6
+
 
 ## prerequisites
 create a conda environment using the file in `environment/pkg.txt`
