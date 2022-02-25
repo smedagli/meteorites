@@ -7,13 +7,15 @@ import numpy as np
 import tqdm
 import os
 
-from utils import paths
-from geo import geography as geof
-from utils.common import numeric_fill, string_fill, country_order
-from parse.dates import get_year
+from meteorites.utils import paths
+from meteorites.geo import geography as geof
+from meteorites.utils.common import numeric_fill, string_fill, country_order
+from meteorites.parse.dates import get_year
 
 
-def _get_row_data(): return pd.read_csv(paths.raw_data_path)
+def _get_row_data():
+    return pd.read_csv(paths.raw_data_path)
+
 
 def _clean_raw_data() -> pd.DataFrame:
     """ Loads the raw data and replaces missing values with the values specified in utils.common
@@ -33,12 +35,12 @@ def _clean_raw_data() -> pd.DataFrame:
     return df_filled
 
 
-def _add_country_column(df: pd.DataFrame, write_csv=0) -> pd.DataFrame:
+def _add_country_column(df: pd.DataFrame, write_csv: bool = False) -> pd.DataFrame:
     """ Adds the column 'country' to the input dataframe `df` (must have and 'reclat' and 'reclong' columns)
     If the input dataframe has not the 'reclat' and 'reclong' columns, raises an error
     Args:
         df: dataframe with geographical data
-        write_csv: if 1, writes data in a csv table (see default path in utils.paths)
+        write_csv: if True, writes data in a csv table (see default path in utils.paths)
     Returns:
         dataframe with the additional 'country' column
     """
@@ -78,7 +80,7 @@ def _get_data() -> pd.DataFrame:
         return df
     else:
         row_data = _clean_raw_data()
-        _add_country_column(row_data, write_csv=1)
+        _add_country_column(row_data, write_csv=True)
         return _get_data()
 
 

@@ -1,12 +1,11 @@
 """
 Contains functions to deal with geographic data
 """
-
 import geopandas as gpd
 from geopy.geocoders import Nominatim
 
 
-def get_country_from_lat_long(lat: float, long:float) -> str:
+def get_country_from_lat_long(lat: float, long: float) -> str:
     """ Returns the country name from latitude and longitude
     if coordinates are not valid, returns 'no coordinates'
     if coordinates are -1, -1 (selected placeholder), returns 'no country'
@@ -21,9 +20,9 @@ def get_country_from_lat_long(lat: float, long:float) -> str:
         >>> get_country_from_lat_long(1, 1)
         'no coordinates'
     """
-    if (lat == 0 and long == 0):
+    if lat == 0 and long == 0:
         return 'Null Island'
-    elif (lat == -1 and long == -1):
+    if lat == -1 and long == -1:
         return 'no country'
     else:
         locator = Nominatim(user_agent="geoapiExercises")
@@ -35,7 +34,7 @@ def get_country_from_lat_long(lat: float, long:float) -> str:
             return location.raw['address']['country']
 
 
-def load_world_data(no_antarctica=1) -> gpd.GeoDataFrame:
+def load_world_data(no_antarctica: bool = True) -> gpd.GeoDataFrame:
     """ Returns the geopandas dataframe of the world
     Args:
         no_antarctica: removes Antarctica (in order to get better-looking maps)

@@ -18,46 +18,51 @@ conda create --name meteorites --file meteorites\environment\pkg.txt
 
 ## folder structure
 ```bash
-|   meteorites.ipynb
+|   .gitignore
+|   README.md
 |   __init__.py
-|   
+|
 +---data
 |       Meteorite_Landings.csv
 |       meteors.csv
-|       
+|
++---doc
+|       meteorites.ipynb
+|
 +---environment
 |       pkg.txt
-|       
-+---figures
-
-|       
-+---geo
-|   |   geography.py
-|   |   __init__.py
-|   |   
-|   \---world_map
-|           ne_110m_admin_0_countries.cpg
-|           ne_110m_admin_0_countries.dbf
-|           ne_110m_admin_0_countries.prj
-|           ne_110m_admin_0_countries.README.html
-|           ne_110m_admin_0_countries.shp
-|           ne_110m_admin_0_countries.shx
-|           ne_110m_admin_0_countries.VERSION.txt
-|           
-+---graphic
-|       parameters.py
-|       __init__.py
-|       
-+---parse
-|       data.py
-|       dates.py
-|       __init__.py
-|       
-\---utils
-        common.py
-        dataframe.py
-        paths.py
-        __init__.py
+|
+\---meteorites
+    |   __init__.py
+    |
+    +---geo
+    |   |   geography.py
+    |   |   __init__.py
+    |   |
+    |   \---world_map
+    |           ne_110m_admin_0_countries.cpg
+    |           ne_110m_admin_0_countries.dbf
+    |           ne_110m_admin_0_countries.prj
+    |           ne_110m_admin_0_countries.README.html
+    |           ne_110m_admin_0_countries.shp
+    |           ne_110m_admin_0_countries.shx
+    |           ne_110m_admin_0_countries.VERSION.txt
+    |
+    +---graphic
+    |       parameters.py
+    |       __init__.py
+    |
+    +---parse
+    |       data.py
+    |       dates.py
+    |       __init__.py
+    |
+    \---utils
+            common.py
+            dataframe.py
+            paths.py
+            version.py
+            __init__.py
 ```
 
 ### components
